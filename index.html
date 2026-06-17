@@ -9,6 +9,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="Cuentas Claras" />
+    <link rel="manifest" href="manifest.json">
 </head>
 
 <body class="bg-slate-900 text-slate-100 font-sans min-h-screen py-6 px-4 flex flex-col justify-between">
@@ -117,9 +118,12 @@
                     <h3 class="text-sm font-bold text-slate-300 uppercase tracking-wider">
                         ¿Quién le transfiere a quién?
                     </h3>
-                    <span class="text-[9px] text-slate-500 font-medium italic shrink-0">💡 Tocá un alias para copiarlo</span>
+                    <span class="text-[9px] text-slate-500 font-medium italic shrink-0">💡 Tocá un alias para
+                        copiarlo</span>
                 </div>
-                <div id="contenedor-transferencias" class="max-h-60 overflow-y-auto bg-slate-900 border border-slate-700/60 rounded-xl divide-y divide-slate-800 shadow-sm"></div>
+                <div id="contenedor-transferencias"
+                    class="max-h-60 overflow-y-auto bg-slate-900 border border-slate-700/60 rounded-xl divide-y divide-slate-800 shadow-sm">
+                </div>
             </div>
 
             <button id="btn-compartir"
@@ -134,6 +138,13 @@
     </footer>
 
     <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js')
+                    .then(reg => console.log('Service Worker registrado con éxito', reg))
+                    .catch(err => console.error('Error al registrar el Service Worker', err));
+            });
+        }
         let aportantes =
             JSON.parse(localStorage.getItem("cc_aportantes_v5")) || [];
         let historialNombres =
@@ -408,7 +419,7 @@
                 let transferir = Math.min(d.saldo, a.saldo);
 
                 const div = document.createElement("div");
-div.className = "grid grid-cols-12 items-center text-xs gap-1 py-2.5 px-3 border-b border-slate-800 last:border-b-0";
+                div.className = "grid grid-cols-12 items-center text-xs gap-1 py-2.5 px-3 border-b border-slate-800 last:border-b-0";
 
                 const aliasColumnHtml = a.alias
                     ? `<button onclick="copiarAliasRapido(this, '${a.alias}')" class="col-span-4 text-left pl-2 border-l border-slate-800 cursor-pointer focus:outline-none w-full group">

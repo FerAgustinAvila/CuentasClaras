@@ -1,0 +1,17 @@
+{
+  "short_name": "Cuentas Claras",
+  "name": "Cuentas Claras - Divisor de Gastos",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/3061/3061413.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/CuentasClaras/",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+  "display": "standalone",
+  "orientation": "portrait"
+}
