@@ -1,4 +1,4 @@
-# Cuentas Claras - by FerDev 🥩🍻
+# Cuentas Claras - by FerDev 🥩🍻 v2.6
 
 Una SPA (Single Page Application) diseñada con enfoque **mobile-first** para resolver de forma rápida y sin errores matemáticos la división de gastos en juntadas, asados o viajes. 
 
