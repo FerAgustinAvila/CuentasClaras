@@ -18,15 +18,5 @@ Desplegala en segundos usando **GitHub Pages** para llevarla siempre en el celul
 * **HTML5** & **JavaScript Vanilla (ES6+)** (Sin frameworks complejos ni dependencias pesadas).
 * **Tailwind CSS v4** (A través de CDN para una carga ultra rápida y diseño responsivo adaptado a modo oscuro nativo).
 
-## 📦 Despliegue en GitHub Pages
-
-Al estar construida exclusivamente con archivos estáticos (`index.html`), se puede subir directo a tu plataforma favorita:
-
-1. Creá un repositorio público en GitHub.
-2. Subí el archivo `index.html`.
-3. Andá a **Settings** > **Pages**.
-4. En la sección *Build and deployment*, elegí la rama `main` (o `master`) y la carpeta `/root`.
-5. ¡Listo! GitHub te dará una URL pública tipo `https://tu-usuario.github.io/tu-repositorio/`.
-
 ---
 Desarrollado con ❤️ por **FerDev**.
