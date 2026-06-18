@@ -3,10 +3,16 @@
   "name": "Cuentas Claras - Divisor de Gastos",
   "icons": [
     {
-      "src": "https://cdn-icons-png.flaticon.com/512/3061/3061413.png",
+      "src": "https://img.icons8.com/?size=192&id=64551&format=png&color=FFFFFF",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any"
+    },
+    {
+      "src": "https://img.icons8.com/?size=512&id=64551&format=png&color=FFFFFF",
       "type": "image/png",
       "sizes": "512x512",
-      "purpose": "any maskable"
+      "purpose": "any"
     }
   ],
   "start_url": "/CuentasClaras/",
