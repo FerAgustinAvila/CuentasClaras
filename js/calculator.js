@@ -3,7 +3,7 @@ function agruparTransferencias(trans) {
   const grupos = {};
 
   trans.forEach(t => {
-    const esAnonimo = t.deudor === 'El que falta' || t.deudor.startsWith('Invitado #');
+    const esAnonimo = t.deudor === 'Quién falta' || t.deudor.startsWith('Invitado #');
     if (!esAnonimo) {
       result.push({ ...t, esGrupal: false, cantidad: 1 });
     } else {
@@ -23,9 +23,9 @@ function agruparTransferencias(trans) {
   for (const key in grupos) {
     const g = grupos[key];
     const cant = g.deudores.length;
-    if (cant === 1 && g.deudores[0] === 'El que falta') {
+    if (cant === 1 && g.deudores[0] === 'Quién falta') {
       result.push({
-        deudor: 'El que falta',
+        deudor: 'Quién falta',
         acreedor: g.acreedor,
         monto: g.monto,
         alias: g.alias,
@@ -34,7 +34,7 @@ function agruparTransferencias(trans) {
       });
     } else {
       result.push({
-        deudor: `El resto (${cant} pers.)`,
+        deudor: `${cant} personas`,
         acreedor: g.acreedor,
         monto: g.monto,
         alias: g.alias,
@@ -55,7 +55,7 @@ export function calcular(apertantes, totalGente) {
   const losDemas = totalGente - apertantes.length;
 
   if (losDemas === 1) {
-    todos.push({ nombre: 'El que falta', montoTotal: 0, alias: '', montos: [] });
+    todos.push({ nombre: 'Quién falta', montoTotal: 0, alias: '', montos: [] });
   } else if (losDemas > 1) {
     for (let i = 1; i <= losDemas; i++) {
       todos.push({ nombre: `Invitado #${i}`, montoTotal: 0, alias: '', montos: [] });
