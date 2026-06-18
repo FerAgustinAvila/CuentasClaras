@@ -15,7 +15,7 @@
       "purpose": "any"
     }
   ],
-  "start_url": "/CuentasClaras/",
+  "start_url": ".",
   "background_color": "#0f172a",
   "theme_color": "#0f172a",
   "display": "standalone",
